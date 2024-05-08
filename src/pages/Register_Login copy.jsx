@@ -1,6 +1,11 @@
 import React from "react";
-
-function Register() {
+import { useState } from 'react';
+// import "./css1.css";
+function Register_Login() {
+    const [activeTab, setActiveTab] = useState('login');
+    const handleTabClick = (tab) => {
+        setActiveTab(tab);
+      };
   return (
     <div>
       <body className="overflow-x-hidden overflow-y-auto text-primary">
@@ -61,7 +66,7 @@ function Register() {
                             >
                               <div
                                 data-v-ea58f736=""
-                                className="tabsWrapper1 w-full"
+                                className="tabsWrapper w-full"
                               >
                                 <div
                                   data-v-ea58f736=""
@@ -69,14 +74,15 @@ function Register() {
                                 >
                                   <div
                                     data-v-ea58f736=""
-                                    className="w-full absolute bottom-0 left-0 rounded-full slide auth-advance-tab"
-                                    style={{ width: "234px", left: "0px" }}
+                                    className="w-full absolute bottom-0 left-0 rounded-full slide auth-advance-tab btn-register active"
+                                    style={{ width: "234px", left: activeTab === "login" ? "0px" : "270px" }}
                                   ></div>
                                   <div
                                     data-v-ea58f736=""
                                     className="w-full absolute bottom-0 left-0 rounded-full slide-border auth-advance-tab"
                                   ></div>
                                   <div
+                                  onClick={() => handleTabClick('login')}
                                     data-v-ea58f736=""
                                     id="auth-advance-tab"
                                     className="tabslinks relative cursor-pointer flex items-center justify-center login w-full active"
@@ -89,6 +95,7 @@ function Register() {
                                     </span>
                                   </div>
                                   <div
+                                   onClick={() => handleTabClick('register')}
                                     data-v-ea58f736=""
                                     id="auth-advance-tab"
                                     className="tabslinks relative cursor-pointer flex items-center justify-center btn-register w-full"
@@ -102,8 +109,85 @@ function Register() {
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                            <div data-v-d8556cff="" className="w-full mt-4">
+                            </div>         
+                            {activeTab === 'login'?(<div data-v-d8556cff="" className="w-full mt-4">
+                              <form
+                                data-v-d8556cff=""
+                                className="flex flex-col mt-3"
+                              >
+                                <div
+                                  data-v-d8556cff=""
+                                  className="login-input-wrapper w-full text-[var(--primary)] w-full rounded-[10px] mb-2"
+                                >
+                                  <h5
+                                    data-v-d8556cff=""
+                                    className="text-sm mb-2 text-primary"
+                                  >
+                                    บัญชีผู้ใช้ หรือ เบอร์โทรศัพท์
+                                  </h5>
+                                  <div
+                                    data-v-d8556cff=""
+                                    className="main-input"
+                                  >
+                                    <input
+                                      data-v-d8556cff=""
+                                      className="w-full h-full text-base text-primary outline-none placeholder-[var(--input-placeholder)]"
+                                      type="text"
+                                      placeholder="กรอกชื่อผู้ใช้ หรือ เบอร์โทรศัพท์"
+                                      autocomplete="off"
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  data-v-d8556cff=""
+                                  className="login-input-wrapper w-full text-[var(--primary)] w-full rounded-[10px] mb-2"
+                                >
+                                  <h5
+                                    data-v-d8556cff=""
+                                    className="text-sm mb-2 text-primary"
+                                  >
+                                    รหัสผ่าน
+                                  </h5>
+                                  <div
+                                    data-v-d8556cff=""
+                                    className="main-input"
+                                  >
+                                    <input
+                                      data-v-d8556cff=""
+                                      className="w-full h-full text-base text-primary outline-none placeholder-[var(--input-placeholder)]"
+                                      type="password"
+                                      placeholder="รหัสผ่าน / PIN"
+                                      autocomplete="off"
+                                    />
+                                  </div>
+                                  <div
+                                    data-v-d8556cff=""
+                                    className="main-input"
+                                  >
+                                   <button
+                                    data-v-9dec3a92=""
+                                    data-v-d8556cff=""
+                                    id="btn01"
+                                    type="submit"
+                                    className="base-button"
+                                  >
+                                    <div
+                                      data-v-9dec3a92=""
+                                      className="flex justify-center items-center"
+                                    >
+                                      <span
+                                        data-v-d8556cff=""
+                                        className="text-[var(--btn-login)]"
+                                      >
+                                        เข้าสู่ระบบ
+                                      </span>
+                                    </div>
+                                  </button>
+                                  </div>
+                                  
+                                </div>
+                              </form>
+                            </div>):( <div data-v-d8556cff="" className="w-full mt-4">
                               <form
                                 data-v-d8556cff=""
                                 className="flex flex-col mt-3"
@@ -225,7 +309,7 @@ function Register() {
                                   </div>
                                 </div>
                               </form>
-                            </div>
+                            </div>)}
                           </div>
                         </div>
                       </div>
@@ -241,4 +325,4 @@ function Register() {
   );
 }
 
-export default Register;
+export default Register_Login;
