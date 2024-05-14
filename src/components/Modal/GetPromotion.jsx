@@ -62,7 +62,7 @@ function GetPromotion({closeModal}) {
                 draggable="false"
                 class="bg-cover centent-promote mt-2 mx-auto rounded-base w-full"
               />
-              <div
+              <div style={{color:'#FFF'}}
                 data-v-ac0eeeb0=""
                 class="w-full mt-2 text-center font-medium &lt;sm:text-base sm:text-base md:text-lg"
               >

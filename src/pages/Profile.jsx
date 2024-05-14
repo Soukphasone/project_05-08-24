@@ -5,6 +5,19 @@ import Letter_slide from "../components/Letter_slide";
 import ChangePassword from "../components/Modal/ChangePassword";
 import { createPortal } from "react-dom";
 function Profile() {
+  const username = 'bet88379365048'
+  const password = ' Sm2708'
+  const copyToClipboard = () => {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(username).then(() => {
+        alert('Text copied to clipboard!');
+      }).catch((err) => {
+        console.error('Could not copy text: ', err);
+      });
+    } else {
+      console.warn('Clipboard API not available');
+    }
+  };
   const [openModal, setOpenModal] = useState(false);
   const handleButtonClick1 = () => {
     setOpenModal(false);
@@ -92,7 +105,7 @@ function Profile() {
                         </span>
                         <div class="w-full flex items-center gap-x-4 justify-between">
                           <span class="text-primary text-left w-full max-w-40 truncate text-sm">
-                            bet88379365048
+                          {username}
                           </span>
                           <span class="nuxt-icon nuxt-icon--fill cursor-pointer text-[var(--primary)]">
                             <svg
@@ -127,11 +140,11 @@ function Profile() {
                       </div>
                       <div class="w-full flex bg-[var(--card-secondary)] px-4 py-[11px] rounded-[10px]">
                         <span class="text-sm text-left w-[60%] text-[var(--text-link)]">
-                          รหัสเข้าเกม
+                        รหัสเข้าเกม
                         </span>
                         <div class="w-full flex items-center gap-x-4 justify-between">
                           <span class="text-primary text-left w-full max-w-40 truncate text-sm">
-                            Sm2708
+                           {password}
                           </span>
                           <span class="nuxt-icon nuxt-icon--fill cursor-pointer text-active">
                             <svg 
