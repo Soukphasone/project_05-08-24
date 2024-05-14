@@ -4,13 +4,13 @@ import Header from "../Header";
 import Image_slide from "../image_slide";
 import { useNavigate } from "react-router-dom";
 import Letter_slide from "../Letter_slide";
-function Slot() {
+function Casino() {
   const navigate = useNavigate();
   const NextToHome = () => {
     navigate("/");
   };
-  const NextToCasino = () => {
-    navigate("/casino");
+  const NextToSlot = () => {
+    navigate("/slot");
   };
   const NextToFish = () => {
     navigate("/fish");
@@ -28,7 +28,7 @@ function Slot() {
             class="min-h-screen overflow-scroll pb-[80px]"
           >
             <div data-v-3c88d514="" class="w-full mx-auto base-container pb-2">
-              <Letter_slide/>
+              <Letter_slide />
               <div
                 class="nuxt-loading-indicator"
                 style={{
@@ -73,9 +73,8 @@ function Slot() {
                   <div class="flex-row flex">
                     <div class="block">
                       <div class="space-y-2 mr-2">
-                        <div data-v-d320b445="" class="w-full gradient-border">
+                        <div onClick={NextToHome} data-v-d320b445="" class="w-full gradient-border">
                           <a
-                            onClick={NextToHome}
                             class="rounded-[10px] text-[var(--input-disabled)] flex flex-col items-center justify-center w-[60px] h-[55px] md:w-[4.125rem] md:h-[3.5rem]"
                           >
                             <span class="nuxt-icon nuxt-icon--fill my-1">
@@ -167,15 +166,12 @@ function Slot() {
                             <p class="text-sm text-center">หน้าหลัก</p>
                           </a>
                         </div>
-                        <div
-                          data-v-d320b445=""
-                          class="borderGradient w-full gradient-border"
-                        >
+                        <div onClick={NextToSlot} data-v-d320b445="" class="w-full gradient-border">
                           <a
-                            aria-current="page"
-                            class="router-link-active router-link-exact-active gradient-box rounded-[10px] text-[var(--input-disabled)] flex flex-col items-center justify-center w-[60px] h-[55px] md:w-[4.125rem] md:h-[3.5rem]"
+                           
+                            class="rounded-[10px] text-[var(--input-disabled)] flex flex-col items-center justify-center w-[60px] h-[55px] md:w-[4.125rem] md:h-[3.5rem]"
                           >
-                            <span class="nuxt-icon my-1">
+                            <span class="nuxt-icon nuxt-icon--fill my-1">
                               <svg
                                 width="20"
                                 height="17"
@@ -300,11 +296,15 @@ function Slot() {
                             <p class="text-sm text-center">สล็อต</p>
                           </a>
                         </div>
-                        <div onClick={NextToCasino} data-v-d320b445="" class="w-full gradient-border">
+                        <div
+                          data-v-d320b445=""
+                          class="borderGradient w-full gradient-border"
+                        >
                           <a
-                            class="rounded-[10px] text-[var(--input-disabled)] flex flex-col items-center justify-center w-[60px] h-[55px] md:w-[4.125rem] md:h-[3.5rem]"
+                            aria-current="page"
+                            class="router-link-active router-link-exact-active gradient-box rounded-[10px] text-[var(--input-disabled)] flex flex-col items-center justify-center w-[60px] h-[55px] md:w-[4.125rem] md:h-[3.5rem]"
                           >
-                            <span class="nuxt-icon nuxt-icon--fill my-1">
+                            <span class="nuxt-icon my-1">
                               <svg
                                 width="20"
                                 height="20"
@@ -677,10 +677,9 @@ function Slot() {
                             <p class="text-sm text-center">กีฬา</p>
                           </a>
                         </div>
-
                         <div onClick={NextToFish} data-v-d320b445="" class="w-full gradient-border">
                           <a
-                            
+                           
                             class="rounded-[10px] text-[var(--input-disabled)] flex flex-col items-center justify-center w-[60px] h-[55px] md:w-[4.125rem] md:h-[3.5rem]"
                           >
                             <span class="nuxt-icon nuxt-icon--fill my-1">
@@ -742,48 +741,11 @@ function Slot() {
                             <p class="text-sm text-center">ยิงปลา</p>
                           </a>
                         </div>
+                      
                       </div>
                     </div>
+
                     <div class="w-full auto-rows-max gap-2 grid grid-cols-2 @xs:grid-cols-2 @sm:grid-cols-3 @md:grid-cols-4 lg:grid-cols-6">
-                      <div class="z-1 min-h-14 cursor-pointer animate__animated animate__fadeInUp animate__faster relative overflow-hidden rounded-[10px]">
-                        <img
-                          src="./assets/home_files/24467008-3317-40c8-b312-fe46ead2eabf.png"
-                          alt="img-cover"
-                          loading="lazy"
-                          data-nuxt-img=""
-                          class="w-full providerCard min-h-14 relative rounded-base"
-                        />
-                        <div class="absolute flex flex-col space-y-1 w-max h-[16px] text-center text-[10px] bottom-8 left-3">
-                          <div class="hits text-white p-1">ฮิต</div>
-                          <div class="new text-white p-1">ใหม่</div>
-                        </div>
-                      </div>
-                      <div class="z-1 min-h-14 cursor-pointer animate__animated animate__fadeInUp animate__faster relative overflow-hidden rounded-[10px]">
-                        <img
-                          src="https://d3lz4f0irhj096.cloudfront.net/b9df3389-fe77-4839-8649-a9ebfd282e4f"
-                          alt="img-cover"
-                          loading="lazy"
-                          data-nuxt-img=""
-                          class="w-full providerCard min-h-14 relative rounded-base"
-                        />
-                        <div class="absolute flex flex-col space-y-1 w-max h-[16px] text-center text-[10px] bottom-8 left-3">
-                          <div class="hits text-white p-1">ฮิต</div>
-                          <div class="new text-white p-1">ใหม่</div>
-                        </div>
-                      </div>
-                      <div class="z-1 min-h-14 cursor-pointer animate__animated animate__fadeInUp animate__faster relative overflow-hidden rounded-[10px]">
-                        <img
-                          src="./assets/home_files/007fcaf7-8df8-41d8-9e3e-f1a5e347ad92.png"
-                          alt="img-cover"
-                          loading="lazy"
-                          data-nuxt-img=""
-                          class="w-full providerCard min-h-14 relative rounded-base"
-                        />
-                        <div class="absolute flex flex-col space-y-1 w-max h-[16px] text-center text-[10px] bottom-8 left-3">
-                          <div class="hits text-white p-1">ฮิต</div>
-                          <div class="new text-white p-1">ใหม่</div>
-                        </div>
-                      </div>
                       <div class="z-1 min-h-14 cursor-pointer animate__animated animate__fadeInUp animate__faster relative overflow-hidden rounded-[10px]">
                         <img
                           src="https://d3lz4f0irhj096.cloudfront.net/e0c71fcc-31e3-4ce7-acd6-b5a5f1df29c7"
@@ -799,7 +761,20 @@ function Slot() {
                       </div>
                       <div class="z-1 min-h-14 cursor-pointer animate__animated animate__fadeInUp animate__faster relative overflow-hidden rounded-[10px]">
                         <img
-                          src="https://d3lz4f0irhj096.cloudfront.net/dfbe5711-b196-479d-a14e-9ed9917b6194"
+                          src="https://d3lz4f0irhj096.cloudfront.net/fabdf7c9-fa65-41c8-bc8c-a47e87f834de"
+                          alt="img-cover"
+                          loading="lazy"
+                          data-nuxt-img=""
+                          class="w-full providerCard min-h-14 relative rounded-base"
+                        />
+                        <div class="absolute flex flex-col space-y-1 w-max h-[16px] text-center text-[10px] bottom-8 left-3">
+                          <div class="hits text-white p-1">ฮิต</div>
+                          <div class="new text-white p-1">ใหม่</div>
+                        </div>
+                      </div>
+                      <div class="z-1 min-h-14 cursor-pointer animate__animated animate__fadeInUp animate__faster relative overflow-hidden rounded-[10px]">
+                        <img
+                          src="https://d3lz4f0irhj096.cloudfront.net/29f6edb5-6191-409d-816c-c419135ba217"
                           alt="img-cover"
                           loading="lazy"
                           data-nuxt-img=""
@@ -823,4 +798,4 @@ function Slot() {
   );
 }
 
-export default Slot;
+export default Casino;

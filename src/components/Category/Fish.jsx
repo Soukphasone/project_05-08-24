@@ -4,16 +4,16 @@ import Header from "../Header";
 import Image_slide from "../image_slide";
 import { useNavigate } from "react-router-dom";
 import Letter_slide from "../Letter_slide";
-function Slot() {
+function Fish() {
   const navigate = useNavigate();
   const NextToHome = () => {
     navigate("/");
   };
+  const NextToSlot = () => {
+    navigate("/slot");
+  };
   const NextToCasino = () => {
     navigate("/casino");
-  };
-  const NextToFish = () => {
-    navigate("/fish");
   };
   const NextToSport = () => {
     navigate("/sports");
@@ -28,7 +28,7 @@ function Slot() {
             class="min-h-screen overflow-scroll pb-[80px]"
           >
             <div data-v-3c88d514="" class="w-full mx-auto base-container pb-2">
-              <Letter_slide/>
+              <Letter_slide />
               <div
                 class="nuxt-loading-indicator"
                 style={{
@@ -73,9 +73,8 @@ function Slot() {
                   <div class="flex-row flex">
                     <div class="block">
                       <div class="space-y-2 mr-2">
-                        <div data-v-d320b445="" class="w-full gradient-border">
+                        <div onClick={NextToHome} data-v-d320b445="" class="w-full gradient-border">
                           <a
-                            onClick={NextToHome}
                             class="rounded-[10px] text-[var(--input-disabled)] flex flex-col items-center justify-center w-[60px] h-[55px] md:w-[4.125rem] md:h-[3.5rem]"
                           >
                             <span class="nuxt-icon nuxt-icon--fill my-1">
@@ -167,15 +166,11 @@ function Slot() {
                             <p class="text-sm text-center">หน้าหลัก</p>
                           </a>
                         </div>
-                        <div
-                          data-v-d320b445=""
-                          class="borderGradient w-full gradient-border"
-                        >
-                          <a
-                            aria-current="page"
-                            class="router-link-active router-link-exact-active gradient-box rounded-[10px] text-[var(--input-disabled)] flex flex-col items-center justify-center w-[60px] h-[55px] md:w-[4.125rem] md:h-[3.5rem]"
+                        <div onClick={NextToSlot} data-v-d320b445="" class="w-full gradient-border">
+                          <a  
+                            class="rounded-[10px] text-[var(--input-disabled)] flex flex-col items-center justify-center w-[60px] h-[55px] md:w-[4.125rem] md:h-[3.5rem]"
                           >
-                            <span class="nuxt-icon my-1">
+                            <span class="nuxt-icon nuxt-icon--fill my-1">
                               <svg
                                 width="20"
                                 height="17"
@@ -677,10 +672,37 @@ function Slot() {
                             <p class="text-sm text-center">กีฬา</p>
                           </a>
                         </div>
-
-                        <div onClick={NextToFish} data-v-d320b445="" class="w-full gradient-border">
+                        <div data-v-d320b445="" class="borderGradient w-full gradient-border"><a aria-current="page"
+                        class="router-link-active router-link-exact-active gradient-box rounded-[10px] text-[var(--input-disabled)] flex flex-col items-center justify-center w-[60px] h-[55px] md:w-[4.125rem] md:h-[3.5rem]"><span
+                          class="nuxt-icon my-1"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                              d="M5.31248 5.8594C5.63634 5.8594 5.89841 6.12147 5.89841 6.44533C5.89841 6.7692 5.63634 7.03127 5.31248 7.03127H2.13347C3.52018 8.47279 5.50283 9.37501 7.65622 9.37501H8.63813C9.29789 10.7597 10.7107 11.7578 12.3437 11.7578C12.6676 11.7578 12.9296 11.4957 12.9296 11.1719V9.68856C13.6369 10.0988 14.1015 10.9052 14.1015 11.7578C14.1015 13.0504 13.0504 14.1016 11.7578 14.1016H11.3475C10.6728 12.6842 9.23836 11.7578 7.65622 11.7578C7.43993 11.7578 7.24137 11.8768 7.1395 12.0674C7.03763 12.2579 7.04911 12.4891 7.16868 12.6688C8.4607 14.6068 8.4607 17.151 7.16868 19.089C7.04907 19.2687 7.03766 19.4999 7.1395 19.6904C7.24134 19.881 7.43989 20 7.65622 20C9.23836 20 10.6729 19.0736 11.3475 17.6563H11.7578C16.281 17.6563 19.9999 13.8983 19.9999 9.37505C19.9999 4.85179 16.281 1.17196 11.7578 1.17196H0.585935C0.262069 1.17196 0 1.43403 0 1.75789C0 3.26836 0.447381 4.67398 1.20886 5.85944H5.31248V5.8594ZM9.5857 4.51585C9.35683 4.28698 9.35683 3.91617 9.5857 3.6873C9.81457 3.45843 10.1854 3.45843 10.4143 3.6873C11.2891 4.56163 11.2891 5.98526 10.4143 6.85959C10.1854 7.08846 9.81457 7.08846 9.5857 6.85959C9.35683 6.63072 9.35683 6.25991 9.5857 6.03104C10.0034 5.61335 10.0034 4.93354 9.5857 4.51585ZM7.24196 4.51585C7.01309 4.28698 7.01309 3.91617 7.24196 3.6873C7.47083 3.45843 7.84165 3.45843 8.07051 3.6873C8.94539 4.56163 8.94539 5.98526 8.07051 6.85959C7.84165 7.08846 7.47083 7.08846 7.24196 6.85959C7.01309 6.63072 7.01309 6.25991 7.24196 6.03104C7.65965 5.61335 7.65965 4.93354 7.24196 4.51585ZM5.31248 3.51566C5.63607 3.51566 5.89841 3.778 5.89841 4.10159C5.89841 4.42519 5.63607 4.68753 5.31248 4.68753C4.98888 4.68753 4.72654 4.42519 4.72654 4.10159C4.72654 3.778 4.98888 3.51566 5.31248 3.51566Z"
+                              fill="url(#paint0_linear_5932_3632)"></path>
+                            <path
+                              d="M18.8463 3.21668C18.8959 2.38828 19.2381 1.58875 19.8266 1.00024C19.9943 0.832579 20.0446 0.580821 19.9536 0.361641C19.8633 0.1425 19.6492 0 19.4124 0H17.5538C16.7306 0 15.8884 0.242813 15.1847 0.658321C16.5904 1.2134 17.8672 2.09707 18.8463 3.21668Z"
+                              fill="url(#paint1_linear_5932_3632)"></path>
+                            <defs>
+                              <linearGradient id="paint0_linear_5932_3632" x1="2.66665" y1="4.30997" x2="15.9789"
+                                y2="18.4508" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="var(--main-icon-1)"></stop>
+                                <stop offset="0.5" stop-color="var(--main-icon-2)"></stop>
+                                <stop offset="1" stop-color="var(--main-icon-3)"></stop>
+                              </linearGradient>
+                              <linearGradient id="paint1_linear_5932_3632" x1="15.8265" y1="0.536114" x2="17.9316"
+                                y2="3.68638" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="var(--main-icon-1)"></stop>
+                                <stop offset="0.5" stop-color="var(--main-icon-2)"></stop>
+                                <stop offset="1" stop-color="var(--main-icon-3)"></stop>
+                              </linearGradient>
+                            </defs>
+                          </svg>
+                        </span>
+                        <p class="text-sm text-center">ยิงปลา</p>
+                      </a></div>
+                        {/* <div data-v-d320b445="" class="w-full gradient-border">
                           <a
-                            
+                           
                             class="rounded-[10px] text-[var(--input-disabled)] flex flex-col items-center justify-center w-[60px] h-[55px] md:w-[4.125rem] md:h-[3.5rem]"
                           >
                             <span class="nuxt-icon nuxt-icon--fill my-1">
@@ -741,9 +763,11 @@ function Slot() {
                             </span>
                             <p class="text-sm text-center">ยิงปลา</p>
                           </a>
-                        </div>
+                        </div> */}
+                      
                       </div>
                     </div>
+
                     <div class="w-full auto-rows-max gap-2 grid grid-cols-2 @xs:grid-cols-2 @sm:grid-cols-3 @md:grid-cols-4 lg:grid-cols-6">
                       <div class="z-1 min-h-14 cursor-pointer animate__animated animate__fadeInUp animate__faster relative overflow-hidden rounded-[10px]">
                         <img
@@ -760,7 +784,7 @@ function Slot() {
                       </div>
                       <div class="z-1 min-h-14 cursor-pointer animate__animated animate__fadeInUp animate__faster relative overflow-hidden rounded-[10px]">
                         <img
-                          src="https://d3lz4f0irhj096.cloudfront.net/b9df3389-fe77-4839-8649-a9ebfd282e4f"
+                          src="https://d3lz4f0irhj096.cloudfront.net/fe09d5d2-aa6e-4be4-8429-d793e1698392"
                           alt="img-cover"
                           loading="lazy"
                           data-nuxt-img=""
@@ -773,33 +797,7 @@ function Slot() {
                       </div>
                       <div class="z-1 min-h-14 cursor-pointer animate__animated animate__fadeInUp animate__faster relative overflow-hidden rounded-[10px]">
                         <img
-                          src="./assets/home_files/007fcaf7-8df8-41d8-9e3e-f1a5e347ad92.png"
-                          alt="img-cover"
-                          loading="lazy"
-                          data-nuxt-img=""
-                          class="w-full providerCard min-h-14 relative rounded-base"
-                        />
-                        <div class="absolute flex flex-col space-y-1 w-max h-[16px] text-center text-[10px] bottom-8 left-3">
-                          <div class="hits text-white p-1">ฮิต</div>
-                          <div class="new text-white p-1">ใหม่</div>
-                        </div>
-                      </div>
-                      <div class="z-1 min-h-14 cursor-pointer animate__animated animate__fadeInUp animate__faster relative overflow-hidden rounded-[10px]">
-                        <img
-                          src="https://d3lz4f0irhj096.cloudfront.net/e0c71fcc-31e3-4ce7-acd6-b5a5f1df29c7"
-                          alt="img-cover"
-                          loading="lazy"
-                          data-nuxt-img=""
-                          class="w-full providerCard min-h-14 relative rounded-base"
-                        />
-                        <div class="absolute flex flex-col space-y-1 w-max h-[16px] text-center text-[10px] bottom-8 left-3">
-                          <div class="hits text-white p-1">ฮิต</div>
-                          <div class="new text-white p-1">ใหม่</div>
-                        </div>
-                      </div>
-                      <div class="z-1 min-h-14 cursor-pointer animate__animated animate__fadeInUp animate__faster relative overflow-hidden rounded-[10px]">
-                        <img
-                          src="https://d3lz4f0irhj096.cloudfront.net/dfbe5711-b196-479d-a14e-9ed9917b6194"
+                          src="https://d3lz4f0irhj096.cloudfront.net/fe09d5d2-aa6e-4be4-8429-d793e1698392"
                           alt="img-cover"
                           loading="lazy"
                           data-nuxt-img=""
@@ -823,4 +821,4 @@ function Slot() {
   );
 }
 
-export default Slot;
+export default Fish;
