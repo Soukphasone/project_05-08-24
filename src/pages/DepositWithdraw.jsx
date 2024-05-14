@@ -1,15 +1,15 @@
 import React from "react";
 import Header from "../components/Header";
 import Letter_slide from "../components/Letter_slide";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import FooterDW from "../components/FooterDW";
 function Deposit_Withdraw() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const NextoDeposit = () => {
-    navigate("/bank/deposit");
+    // navigate("/bank/deposit");
   };
   const NextoWithdraw = () => {
-    navigate("/bank/withdraw");
+    // navigate("/bank/withdraw");
   };
   return (
     <body class="overflow-x-hidden overflow-y-auto text-primary">

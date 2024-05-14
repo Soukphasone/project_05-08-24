@@ -1,30 +1,30 @@
 import React from "react";
 import Header from "../components/Header";
 import Letter_slide from "../components/Letter_slide";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import FooterDW from "../components/FooterDW";
 function BankList() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const NextoHome = () => {
-    navigate("/");
+    // navigate("/");
   };
   const NextoPromotion = () => {
-    navigate("/promotion");
+    // navigate("/promotion");
   };
   const NextoBag = () => {
-    navigate("/bag");
+    // navigate("/bag");
   };
   return (
     <body class="overflow-x-hidden overflow-y-auto text-primary" style={{}}>
       <div id="__nuxt" data-v-app="">
         <div data-v-3c88d514="">
-          <Header/>
+          <Header />
           <main
             data-v-3c88d514=""
             class="min-h-screen overflow-scroll pb-[80px]"
           >
             <div data-v-3c88d514="" class="w-full mx-auto base-container pb-2">
-              <Letter_slide/>
+              <Letter_slide />
               <div class="base-container-small">
                 <div
                   data-v-fe9de6ba=""
@@ -53,7 +53,7 @@ function BankList() {
                         <div
                           data-v-ea58f736=""
                           class="w-full absolute bottom-0 left-0 rounded-full slide depositTab"
-                          style={{width: '608px', left: '0px'}}
+                          style={{ width: '608px', left: '0px' }}
                         ></div>
                         <div
                           data-v-ea58f736=""
@@ -190,7 +190,7 @@ function BankList() {
               </div>
             </div>
           </main>
-         <FooterDW/>
+          <FooterDW />
         </div>
       </div>
     </body>
