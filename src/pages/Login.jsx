@@ -1,10 +1,13 @@
 import React, { useState, useCallback } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { BackList } from "../constant/bankList";
 import Select from "react-select";
+import Swal from 'sweetalert2'
+import _LoginController from "../api/login";
+
 function Login() {
   const { data } = useParams();
-  const navigate = useNavigate();
+
   const [bankCode, setBankCode] = useState(0);
   const [activeTab, setActiveTab] = useState(data);
   const [inputPhonenumber, setInputPhonenumber] = useState("");
@@ -12,6 +15,10 @@ function Login() {
   const [typePhone, setTypePhone] = useState("TH");
   const [selectedOption, setSelectedOption] = useState("เบอร์โทรศัพท์ไทย");
   const [phoneCheck, setPhoneCheck] = useState("");
+  const [userNameInput, setUserNameInput] = useState();
+  const [passwordInput, setPasswordInput] = useState();
+  const [messageCreate, setMessageCreate] = useState();
+
   const options = [
     {
       value: "เบอร์โทรศัพท์ไทย",
@@ -29,8 +36,8 @@ function Login() {
     setSelectedOption(option.value);
     setInputPhonenumber("");
   };
+
   const handleChangePhone = useCallback((event) => {
-    console.log("event.target.value", event.target.value);
     const re = /^[0-9\b]+$/;
     if (event.target.value === "" || re.test(event.target.value)) {
       setInputPhonenumber(event?.target?.value);
@@ -141,9 +148,33 @@ function Login() {
       border: state.isSelected ? "none" : "none",
     }),
   };
-  const NextToHome = (e) => {
-    e.preventDefault();
-    navigate("/");
+
+  const { handleLogin, loginPlayNow } = _LoginController();
+
+  const NextToHome = async (e) => {
+    const _res = await handleLogin(userNameInput, passwordInput,
+      (response) => {
+        if (response === false) {
+          Swal.fire({
+            icon: 'success',
+            title: "สำเร็จ",
+            showConfirmButton: false,
+            timer: 2000,
+            background: '#242424', // Change to the color you want
+            color: '#fff',
+          });
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: "ทำรายการไม่สำเร็จ",
+            showConfirmButton: false,
+            timer: 2000,
+            background: '#242424',
+            color: '#fff',
+          });
+        }
+      });
+    if (_res) setMessageCreate(_res?.statusDesc);
   };
   const handleLoginTab = () => {
     setActiveTab("login");
@@ -293,6 +324,7 @@ function Login() {
                                       type="text"
                                       placeholder="เบอร์โทรศัพท์"
                                       autocomplete="off"
+                                      onChange={(e) => setUserNameInput(e?.target?.value)}
                                     />
                                   </div>
                                   <div
@@ -319,6 +351,7 @@ function Login() {
                                       class="w-full h-full text-base text-primary outline-none placeholder-[var(--input-placeholder)]"
                                       type="password"
                                       placeholder="รหัสผ่าน"
+                                      onChange={(e) => setPasswordInput(e?.target?.value)}
                                       autocomplete="off"
                                     />
                                   </div>
@@ -327,12 +360,13 @@ function Login() {
                                     class="h-[18px]"
                                   ></div>
                                 </div>
-                                <div onClick={NextToHome} data-v-d8556cff="">
+                                <div data-v-d8556cff="">
                                   <button
                                     data-v-9dec3a92=""
                                     data-v-d8556cff=""
                                     id="btn01"
-                                    type="submit"
+                                    type="button"
+                                    onClick={NextToHome}
                                     class="base-button-wrapper v-rounded btn-primary btn-lg btn-primary mt-4 w-full"
                                   >
                                     <div
@@ -356,7 +390,7 @@ function Login() {
                                 data-v-d8556cff=""
                                 class="flex flex-col mt-3"
                               >
-                             
+
                                 <div
                                   data-v-d8556cff=""
                                   class="login-input-wrapper w-full text-[var(--primary)] w-full rounded-[10px] mb-2"
@@ -419,12 +453,12 @@ function Login() {
                                           ? phoneCheck
                                           : ""
                                         : inputPhonenumber.length < 13
-                                        ? phoneCheck
-                                        : ""
+                                          ? phoneCheck
+                                          : ""
                                       : ""}
                                   </span>
                                   <div
-                                  style={{marginTop:'-25px'}}
+                                    style={{ marginTop: '-25px' }}
                                     data-v-d8556cff=""
                                     class="h-[18px]"
                                   ></div>
@@ -827,9 +861,9 @@ function Login() {
                                   ></span>
                                 </span>
                                 <div
-                                    data-v-d8556cff=""
-                                    class="h-[18px]"
-                                  ></div>
+                                  data-v-d8556cff=""
+                                  class="h-[18px]"
+                                ></div>
                               </div>
                               <div
                                 data-v-d8556cff=""

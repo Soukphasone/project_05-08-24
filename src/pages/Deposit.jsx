@@ -1,21 +1,21 @@
 import React from "react";
 import Header from "../components/Header";
 import Letter_slide from "../components/Letter_slide";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import FooterDW from "../components/FooterDW";
 function Deposit() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const NextoBankList = () => {
-    navigate("/bank/deposit/banklist");
+    // navigate("/bank/deposit/banklist");
   };
   const NextoPromotion = () => {
-    navigate("/promotion");
+    // navigate("/promotion");
   };
   const NextoBag = () => {
-    navigate("/bag");
+    // navigate("/bag");
   };
   const NextoHome = () => {
-    navigate("/");
+    // navigate("/");
   };
   return (
     <body class="overflow-x-hidden overflow-y-auto text-primary" style={{}}>
@@ -55,7 +55,7 @@ function Deposit() {
                             enable-background="new 0 0 128 128"
                             xml:space="preserve"
                           >
-      
+
                           </svg> */}
                         </span>
                       </div>
@@ -189,7 +189,7 @@ function Deposit() {
               </div>
             </div>
           </main>
-        <FooterDW/>
+          <FooterDW />
         </div>
       </div>
     </body>

@@ -1,25 +1,24 @@
 import React from "react";
-import Footer_H from "../components/Footer_Home";
-import Header from "../components/Header";
-import Image_slide from "../components/image_slide";
-import { useNavigate } from "react-router-dom";
-import Letter_slide from "../components/Letter_slide";
+import Footer_H from "../../components/Footer_Home";
+import Header from "../../components/Header";
+import Image_slide from "../../components/image_slide";
+import Letter_slide from "../../components/Letter_slide";
 function HomePage() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const NextoSlot = () => {
-    navigate("/slot");
+    // navigate("/slot");
   };
   const NextoCasino = () => {
-    navigate("/casino");
+    // navigate("/casino");
   };
   const NextoFish = () => {
-    navigate("/fish");
+    // navigate("/fish");
   };
   const NextoSport = () => {
-    navigate("/sports");
+    // navigate("/sports");
   };
   const gameType = () => {
-    navigate("/gametype");
+    // navigate("/gametype");
   };
   return (
     <body class="overflow-x-hidden overflow-y-auto text-primary">

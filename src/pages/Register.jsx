@@ -1,19 +1,19 @@
 import React from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 function Register() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('register');
   const handleLoginTab = () => {
     setActiveTab("login");
   };
   const NextToHome = (e) => {
     e.preventDefault();
-    navigate("/");
+    // navigate("/");
   };
   const NextToLogin = (e) => {
     e.preventDefault();
-    navigate(`/Login`);
+    // navigate(`/Login`);
   };
 
   const handleRegisterTab = () => {

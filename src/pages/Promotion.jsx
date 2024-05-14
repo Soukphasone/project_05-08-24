@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Header from "../components/Header";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import Letter_slide from "../components/Letter_slide";
 import GetPromotion from "../components/Modal/GetPromotion";
 import { createPortal } from "react-dom";
@@ -9,18 +9,18 @@ function Promotion() {
   const handleButtonClick1 = () => {
     setOpenModal(false);
   };
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const NextoHome = () => {
-    navigate("/");
+    // navigate("/");
   };
   const NextoBank = () => {
-    navigate("/bank");
+    // navigate("/bank");
   };
   const NextoPromotion = () => {
-    window.location = "/promotion";
+    // window.location = "/promotion";
   };
   const NextoBag = () => {
-    navigate("/bag");
+    // navigate("/bag");
   };
 
   return (

@@ -2,33 +2,33 @@ import React from "react";
 import Header from "../components/Header";
 import Slide_bank from "../components/slide_bank";
 import Letter_slide from "../components/Letter_slide";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 function Withdraw() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const NextoHome = () => {
-    navigate("/");
+    // navigate("/");
   };
   const NextoPromotion = () => {
-    navigate("/promotion");
+    // navigate("/promotion");
   };
   const NextoBag = () => {
-    navigate("/bag");
+    // navigate("/bag");
   };
   const NextoDeposit = () => {
-    navigate("/bank/deposit");
+    // navigate("/bank/deposit");
   };
   return (
     <body class="overflow-x-hidden overflow-y-auto text-primary" style={{}}>
       <div id="__nuxt" data-v-app="">
         <div data-v-3c88d514="">
-          <Header/>
+          <Header />
           <main
             data-v-3c88d514=""
             class="min-h-screen overflow-scroll pb-[80px]"
           >
             <div data-v-3c88d514="" class="w-full mx-auto base-container pb-2">
               <Letter_slide />
-        
+
               <div
                 data-v-6307fb48=""
                 class="base-container-small flex flex-col justify-center"

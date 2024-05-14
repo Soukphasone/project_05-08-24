@@ -1,26 +1,26 @@
 import React, { useState } from 'react'
 import Letter_slide from "../components/Letter_slide";
 import Header from "../components/Header";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import ModalHistoryCredit from "../components/Modal/ModalHistoryCredit";
 import { createPortal } from "react-dom";
 function Cashback() {
   const [openModal, setOpenModal] = useState(false);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const handleButtonClick1 = () => {
     setOpenModal(false);
   };
   const NextoHome = () => {
-    navigate("/");
+    // navigate("/");
   };
   const NextoBank = () => {
-    navigate("/bank");
+    // navigate("/bank");
   };
   const NextoPromotion = () => {
-    navigate("/promotion");
+    // navigate("/promotion");
   };
   const NextoBag = () => {
-    navigate("/bag");
+    // navigate("/bag");
   };
   return (
     <body class="overflow-x-hidden overflow-y-auto text-primary" style={{}}>

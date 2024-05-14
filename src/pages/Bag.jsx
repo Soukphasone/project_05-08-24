@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Letter_slide from "../components/Letter_slide";
 import Header from "../components/Header";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import ModalCredit from "../components/Modal/ModalCredit";
 import { createPortal } from "react-dom";
 import ShareLink from "../components/Modal/ShareLink";
@@ -19,21 +19,21 @@ function Bag() {
   const handleButtonClick3 = () => {
     setOpenModal3(false);
   };
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const NextoHome = () => {
-    navigate("/");
+    // navigate("/");
   };
   const NextoBank = () => {
-    navigate("/bank");
+    // navigate("/bank");
   };
   const NextoPromotion = () => {
-    navigate("/promotion");
+    // navigate("/promotion");
   };
   const NextoBag = () => {
-    window.location = "/bag";
+    // window.location = "/bag";
   };
   const NextoCahsback = () => {
-    navigate("/bag/cashback");
+    // navigate("/bag/cashback");
   };
   return (
     <body class="overflow-x-hidden overflow-y-auto text-primary" style={{}}>
@@ -948,7 +948,7 @@ function Bag() {
                       </h5>
                     </div>
                     <div
-                     onClick={() => setOpenModal3(true)}
+                      onClick={() => setOpenModal3(true)}
                       class="flex flex-col text-center justify-center items-center cursor-pointer"
                       id="btn-cash-point"
                     >

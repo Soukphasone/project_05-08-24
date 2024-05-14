@@ -1,19 +1,19 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-function Modal({closeModal}) {
-  const navigate = useNavigate();
+// import { useNavigate } from "react-router-dom";
+function Modal({ closeModal }) {
+  // const navigate = useNavigate();
   const data = 'login';
   const LogOut = () => {
-    navigate(`/login/${data}`);
+    // navigate(`/login/${data}`);
   };
-  const NextToProfile = ()=>{
-   window.location = '/profile'
+  const NextToProfile = () => {
+    //  window.location = '/profile'
   }
   const NextoDeposit = () => {
-    navigate("/bank/deposit");
+    // navigate("/bank/deposit");
   };
   const NextoWithdraw = () => {
-    navigate("/bank/withdraw");
+    // navigate("/bank/withdraw");
   };
   return (
     <div
@@ -67,8 +67,8 @@ function Modal({closeModal}) {
                 </p>
               </div>
             </div>
-             <button
-             onClick={NextToProfile}
+            <button
+              onClick={NextToProfile}
               data-v-8bd2676d=""
               data-v-910a7880=""
               id="btn01"
@@ -83,7 +83,7 @@ function Modal({closeModal}) {
           <div data-v-910a7880="" class="dash mt-4"></div>
           <div data-v-910a7880="" class="flex w-full mt-6 gap-x-3">
             <div
-            onClick={NextoDeposit}
+              onClick={NextoDeposit}
               data-v-c1e135f9=""
               data-v-910a7880=""
               id="btn-topup-auto"
@@ -124,7 +124,7 @@ function Modal({closeModal}) {
               </div>
             </div>
             <div
-            onClick={NextoWithdraw}
+              onClick={NextoWithdraw}
               data-v-33945a64=""
               data-v-910a7880=""
               id="btn-withdraw"
@@ -245,7 +245,7 @@ function Modal({closeModal}) {
               <p class="text-base text-primary font-normal">ติดต่อแอดมิน</p>
             </div>
             <div
-            onClick={LogOut}
+              onClick={LogOut}
               data-v-910a7880=""
               class="bg-[var(--card-primary)] text-primary py-3 cursor-pointer rounded-base flex px-6 items-center space-x-4 w-full"
             >
@@ -278,11 +278,11 @@ function Modal({closeModal}) {
             </div>
           </div>
         </div>
-       
+
         <button
           data-v-910a7880=""
           class="absolute top-6 text-primary cursor-pointer right-1 px-2"
-          onClick={()=> closeModal(false)}
+          onClick={() => closeModal(false)}
         >
           <span data-v-910a7880="" class="nuxt-icon nuxt-icon--fill">
             <svg
