@@ -82,7 +82,7 @@ function Withdraw() {
               </div>
             </div>
           </main>
-          <FooterDW />
+          {/* <FooterDW /> */}
         </div>
       </div>
     </body>
